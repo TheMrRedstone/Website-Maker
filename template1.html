@@ -42,22 +42,15 @@
         </style>
     </head>
     <body>
-        <div class="code-area">
-            <textarea id="htmlCode" placeholder="HTML Code" oninput="showPreview()"></textarea>
-            <textarea id="cssCode" placeholder="CSS Code" oninput="showPreview()"></textarea>
-            <textarea id="jsCode" placeholder="JavaScript Code" oninput="showPreview()"></textarea>
+        <div class="code-area" onload="showPreview()">
+            <textarea id="htmlCode" placeholder="HTML Code" oninput="showPreview()"><button id='btn' onclick='alertMessage()'>Test</button></textarea>
+            <textarea id="cssCode" placeholder="CSS Code" oninput="showPreview()">#btn { text-align: center; width: 50px; height: 50px; background-color: yellow; border: none; }</textarea>
+            <textarea id="jsCode" placeholder="JavaScript Code" oninput="showPreview()">function alertMessage() { alert('This Is A Alert From The Alert Function'); }</textarea>
         </div>
         <div class="preview-area">
             <iframe id="preview-window"></iframe>
         </div>
         <script type="text/javascript">
-            var htmlCode1 = document.getElementById("htmlCode").value;
-            var cssCode1 = "<style>"+document.getElementById("cssCode").value+"</style>";
-            var jsCode1 = "<scri"+"pt>"+document.getElementById("jsCode").value+"</scri"+"pt>";
-            htmlCode1 = "<button id='btn' onclick='alertMessage()'>Test</button>";
-            cssCode1 = "#btn { text-align: center; width: 50px; height: 50px; background-color: yellow; border: none; }";
-            jsCode1 = "function alertMessage() { alert('This Is A Alert From The Alert Function'); }";
-            
             function showPreview() {
                 var htmlCode = document.getElementById("htmlCode").value;
                 var cssCode = "<style>"+document.getElementById("cssCode").value+"</style>";
