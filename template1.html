@@ -52,13 +52,11 @@
         </div>
         <script type="text/javascript">
             var htmlCode1 = document.getElementById("htmlCode").value;
-            var cssCode1 = "<style>"+document.getElementById("cssCode").value+"</style>";
-            var jsCode1 = "<scri"+"pt>"+document.getElementById("jsCode").value+"</scri"+"pt>";
+            var cssCode1 = document.getElementById("cssCode").value;
+            var jsCode1 = document.getElementById("jsCode").value;
             htmlCode1 = "<button id="btn" onclick="alertMessage()">Test</button>";
             cssCode1 = "#btn { text-align: center; width: 50px; height: 50px; background-color: yellow; border: none; }";
-            jsCode1 = "function alertMessage() {
-alert("This Is A Alert From The Alert Function");
-}";
+            jsCode1 = "function alertMessage() { lert("This Is A Alert From The Alert Function"); }";
             
             function showPreview() {
                 var htmlCode = document.getElementById("htmlCode").value;
