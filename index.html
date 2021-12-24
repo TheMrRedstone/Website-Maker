@@ -39,20 +39,6 @@
                 height: 100%;
                 border: none;
             }
-            
-            #preview-window, .preview-area img {
-              pospreview-areaition: relative;
-
-            }
-            #preview-window {
-              z-index: 101;
-            }
-            .preview-area img:first-child {
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 100;
-            }
         </style>
     </head>
     <body>
@@ -62,8 +48,7 @@
             <textarea id="jsCode" placeholder="JavaScript Code" oninput="showPreview()"></textarea>
         </div>
         <div class="preview-area">
-            <iframe id="preview-window"></iframe>
-            <img src="Open In Window.png">
+            <iframe id="preview-window"><img src="Open In Window.png"></iframe>
         </div>
         <script type="text/javascript">
             function showPreview() {
