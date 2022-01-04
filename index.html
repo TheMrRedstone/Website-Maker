@@ -48,18 +48,23 @@
             <textarea id="jsCode" placeholder="JavaScript Code" oninput="showPreview()"></textarea>
         </div>
         <div class="preview-area">
-            <button style="background: none; border: none; font-size: 20px; background-color: #4CAF50; color: white; padding: 10px 35px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; float: right;"><pre>Preview <img src="Open In Window.png"></pre></button>
+            <button onclick="showNewWindow()" style="background: none; border: none; font-size: 20px; background-color: #4CAF50; color: white; padding: 10px 35px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; float: right;"><pre>Preview <img src="Open In Window.png"></pre></button>
             <iframe id="preview-window"></iframe>
         </div>
         <script type="text/javascript">
+            var frame = document.getElementById("preview-window").contentWindow.document;
             function showPreview() {
                 var htmlCode = document.getElementById("htmlCode").value;
                 var cssCode = "<style>"+document.getElementById("cssCode").value+"</style>";
                 var jsCode = "<scri"+"pt>"+document.getElementById("jsCode").value+"</scri"+"pt>";
-                var frame = document.getElementById("preview-window").contentWindow.document;
+                
                 frame.open();
                 frame.write(htmlCode+cssCode+jsCode);
                 frame.close();
+            }
+            
+            function showNewWindow() {
+                window.open(frame, "_blank");
             }
         </script>
     </body>
